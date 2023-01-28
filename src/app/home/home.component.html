@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="row">
+            
+            <div class="col">
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+                        <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="dropzone" appDnd (fileDropped)="onFileDripped($event)">
+                            <input type="file" #fileDropRef id="fileDropRef" multiple
+                            (change)="fileBrowseHandle($event.target.files)">
+                            <img src="" alt="">
+
+                            <h3>Arraste o arquivo mp3 aqui</h3>
+                            <h3>or</h3>
+                            <label for="fileDropRef">Procure o arquivo no computador</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                    </div>
+                </ng-template>
+                
+                <button class="btn btn-lg btn-outline-primary" (click)="open(content)"><i class="bi bi-plus-circle" aria-hidden="true"></i></button>
+            
+            </div>
+            <div class="col">
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+        
+</div>
