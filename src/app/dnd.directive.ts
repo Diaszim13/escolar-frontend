@@ -31,7 +31,7 @@ export class DndDirective {
     const files = evt.dataTransfer.files;
     if (files.length > 0)
     {
-      this.fileDropped.emmit(files);
+      // this.fileDropped.emmit(files);
       console.log(`voce botou ${files.length} arquivos`);
     }
 
