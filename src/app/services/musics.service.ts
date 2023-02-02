@@ -10,8 +10,13 @@ export class MusicsService {
 
   constructor(public http: HttpClient) { }
 
-  async postMusic(data: any): Promise<Observable<any>> {
-    return this.http.post(`${environment.url}/`, data);
+  async postMusic(data: File) {
+    
+    const formData: FormData = new FormData();
+    formData.append('file', data);
+    console.log(`${environment.url}/test/uploadFile`);
+    
+    return this.http.post(`${environment.url}/test/uploadFile`, formData);
   }
 
   async getMusic(id: any): Promise<Observable<any>> { 
